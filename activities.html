@@ -122,7 +122,14 @@
                     };
                     return iconMap[title] || 'fa-solid fa-question';
                 },
-               
+                validateInput() {
+                const namePattern = /^[a-zA-Z\s]+$/;
+                const phonePattern = /^\d+$/;
+                const isNameValid = namePattern.test(this.customerName.trim());
+                const isPhoneValid = phonePattern.test(this.customerPhone.trim());
+
+                this.isCheckoutEnabled = isNameValid && isPhoneValid;
+    },
                 checkout() {
                     if (this.isCheckoutEnabled) {
                         alert(`Order submitted!\nName: ${this.customerName}\nPhone: ${this.customerPhone}`);
