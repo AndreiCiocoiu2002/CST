@@ -12,6 +12,28 @@
     <title>Document</title> 
 </head>
 <body>
+    <div id="app">
+        <div class="cart" v-if="cart">
+            <h2>Cart</h2>
+            <ul>
+                <li v-for="(item, index) in shoppingCart" :key="index">
+                    <div>
+                        <i :class="item.icon"></i>
+                    </div>
+                    <div>
+                        <h3>{{ item.title }}</h3>
+                        <h4>{{ item.price }} </h4>
+                    </div>
+                    <div>
+                        <i class="fa-solid fa-xmark" style="color: #ffffff;" @click="removeFromCart(index)"></i>
+                    </div>
+                </li>
+            </ul>
+            <div>
+                <input type="text" placeholder="Name" v-model="customerName" @input="validateInput">
+                <input type="text" placeholder="Phone number" v-model="customerPhone" @input="validateInput">
+            </div>
+
     <div v-if="mainPage">
         <div class="navigation">
             <div class="icons">
