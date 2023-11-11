@@ -73,13 +73,11 @@
                 customerPhone: '',
                 isCheckoutEnabled: false,
             },
-
             computed: {
                 basketCount() {
                     return this.shoppingCart.length;
                 },
             },
-           
             methods: {
                 toggleCart() {
                     this.cart = !this.cart;
@@ -90,13 +88,11 @@
                         this.shoppingCart.push(lesson);
                     }
                 },
-
                 removeFromCart(index) {
                     const item = this.shoppingCart[index];
                     this.shoppingCart.splice(index, 1);
                     item.stock++;
                 },
-
                 changeSorting(sortBy) {
                     this.sortBy = sortBy;
                     this.sortLessons();
@@ -126,6 +122,18 @@
                     };
                     return iconMap[title] || 'fa-solid fa-question';
                 },
+               
+                checkout() {
+                    if (this.isCheckoutEnabled) {
+                        alert(`Order submitted!\nName: ${this.customerName}\nPhone: ${this.customerPhone}`);
+                    } else {
+                        alert('Please provide a valid Name and Phone number before checking out.');
+                    }
+                },
+                closeCart() {
+                    this.cart = false;
+                },
+            },
             mounted() {
                 import('./lessons.js')
                     .then(module => {
@@ -136,9 +144,6 @@
                         console.error('Error loading lessons:', error);
                     });
             },
-        },
-    });
-       
-        
+        });
     </script>
 </body>
