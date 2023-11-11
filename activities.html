@@ -33,6 +33,11 @@
                 <input type="text" placeholder="Name" v-model="customerName" @input="validateInput">
                 <input type="text" placeholder="Phone number" v-model="customerPhone" @input="validateInput">
             </div>
+            <div class="checkClose">
+                <button @click="checkout" :disabled="!isCheckoutEnabled">Checkout</button>
+                <button @click="closeCart">Close</button>
+            </div>
+        </div>
 
     <div v-if="mainPage">
         <div class="navigation">
