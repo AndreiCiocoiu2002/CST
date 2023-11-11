@@ -73,8 +73,30 @@
                 customerPhone: '',
                 isCheckoutEnabled: false,
             },
+
+            computed: {
+                basketCount() {
+                    return this.shoppingCart.length;
+                },
+            },
            
             methods: {
+                toggleCart() {
+                    this.cart = !this.cart;
+                },
+                addToBasket(lesson) {
+                    if (lesson.stock > 0) {
+                        lesson.stock--;
+                        this.shoppingCart.push(lesson);
+                    }
+                },
+
+                removeFromCart(index) {
+                    const item = this.shoppingCart[index];
+                    this.shoppingCart.splice(index, 1);
+                    item.stock++;
+                },
+
                 changeSorting(sortBy) {
                     this.sortBy = sortBy;
                     this.sortLessons();
