@@ -4,7 +4,7 @@ export const lessons = [
         location: "London",
         price: "£19",
         stock: 5,
-        icon: "fa-solid fa-table-tennis-paddle-ball", // Add the corresponding icon
+        icon: "fa-solid fa-table-tennis-paddle-ball", 
     },
     {
         title: "Art",

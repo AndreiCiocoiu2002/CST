@@ -9,7 +9,7 @@
     <script src="lessons.js" type="module"></script>
     <script src="project.js" type="module"></script>
     <link rel="stylesheet" href="stylesheet.css">
-    <title>Document</title> 
+    <title>Document</title>
 </head>
 <body>
     <div id="app">
@@ -38,30 +38,44 @@
                 <button @click="closeCart">Close</button>
             </div>
         </div>
-
-    <div v-if="mainPage">
-        <div class="navigation">
-            <div class="icons">
-                <a class="cart-link" @click="toggleCart" :class="{ 'disabled': shoppingCart.length === 0 }">
-                    <i class="fa-solid fa-cart-shopping fa-sm" style="color: #ffffff;"></i>
-                    <span v-if="basketCount > 0" class="basket-count">{{ basketCount }}</span>
-                </a>
+        <!-----------------------------------Check Out------------------------------------------------------------------------>
+    
+        <!-----------------------------------Main Page------------------------------------------------------------------------>
+        <div v-if="mainPage">
+            <div class="navigation">
+                <div class="icons">
+                    <a class="cart-link" @click="toggleCart" :class="{ 'disabled': shoppingCart.length === 0 }">
+                        <i class="fa-solid fa-cart-shopping fa-sm" style="color: #ffffff;"></i>
+                        <span v-if="basketCount > 0" class="basket-count">{{ basketCount }}</span>
+                    </a>
+                </div>
+                <input class="searchBar" type="text" placeholder="Search..">
             </div>
-            <input class="searchBar" type="text" placeholder="Search..">
-        </div>
-        <div class="title">
-            <h1 class="firstTitle">After School Activities</h1>
-        </div>
-        <div class="sorting-buttons">
-            <button @click="changeSorting('title')">Sort by Subject</button>
-            <button @click="changeSorting('location')">Sort by Location</button>
-            <button @click="changeSorting('price')">Sort by Price</button>
-            <button @click="changeSorting('stock')">Sort by Space (Availability)</button>
+            <div class="title">
+                <h1 class="firstTitle">After School Activities</h1>
+            </div>
+            <div class="sorting-buttons">
+                <button @click="changeSorting('title')">Sort by Subject</button>
+                <button @click="changeSorting('location')">Sort by Location</button>
+                <button @click="changeSorting('price')">Sort by Price</button>
+                <button @click="changeSorting('stock')">Sort by Space (Availability)</button>
+            </div>
+            <div class="box" v-for="lesson in lessons" :key="lesson.title">
+                <h1>{{ lesson.title }}</h1>
+                <p>{{ lesson.location }}</p>
+                <i :class="lesson.icon" style="color: #000000;"></i>
+                <p>{{ lesson.price }}</p>
+                <button @click="addToBasket(lesson)" :disabled="lesson.stock === 0">
+                    Add to basket
+                    <i class="fa-solid fa-cart-shopping fa-sm" style="color: #000000;"></i>
+                </button>
+                <p>{{ lesson.stock }} Left</p>
+            </div>
         </div>
     </div>
 
     <script>
-   const app = new Vue({
+         const app = new Vue({
             el: '#app',
             data: {
                 lessons: [],
@@ -128,7 +142,7 @@
                 const isNameValid = namePattern.test(this.customerName.trim());
                 const isPhoneValid = phonePattern.test(this.customerPhone.trim());
 
-                this.isCheckoutEnabled = isNameValid && isPhoneValid;
+        this.isCheckoutEnabled = isNameValid && isPhoneValid;
     },
                 checkout() {
                     if (this.isCheckoutEnabled) {
@@ -154,3 +168,4 @@
         });
     </script>
 </body>
+</html>
