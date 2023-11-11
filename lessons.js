@@ -1,0 +1,72 @@
+export const lessons = [
+    {
+        title: "Tennis",
+        location: "London",
+        price: "£19",
+        stock: 5,
+        icon: "fa-solid fa-table-tennis-paddle-ball", // Add the corresponding icon
+    },
+    {
+        title: "Art",
+        location: "London",
+        price: "£120",
+        stock: 5,
+        icon: "fa-solid fa-brush",
+    },
+    {
+        title: "Football",
+        location: "London",
+        price: "£100",
+        stock: 2,
+        icon: "fa-regular fa-futbol",
+    },
+    {
+        title: "Dance",
+        location: "Brighton",
+        price: "£50",
+        stock: 1,
+        icon: "fa-solid fa-people-pulling",
+    },
+    {
+        title: "Gymnastics",
+        location: "London",
+        price: "£110",
+        stock: 4,
+        icon: "fa-solid fa-dumbbell",
+    },
+    {
+        title: "Gardening",
+        location: "Manchester",
+        price: "£30",
+        stock: 0,
+        icon: "fa-solid fa-plant-wilt",
+    },
+    {
+        title: "Ballet",
+        location: "London",
+        price: "£70",
+        stock: 1,
+        icon: "fa-solid fa-dragon",
+    },
+    {
+        title: "Narative",
+        location: "London",
+        price: "£25",
+        stock: 0,
+        icon: "fa-solid fa-book",
+    },
+    {
+        title: "Maths",
+        location: "Leicester",
+        price: "£15",
+        stock: 5,
+        icon: "fa-solid fa-calculator",
+    },
+    {
+        title: "Chess",
+        location: "Manchester",
+        price: "£10",
+        stock: 5,
+        icon: "fa-solid fa-chess",
+    },
+];
