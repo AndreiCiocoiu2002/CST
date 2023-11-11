@@ -1,0 +1,292 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat:wght@300&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    background-image: url(/images/photo-1578593139862-d9b9d9693d57.avif);
+    padding: 0;
+}
+
+
+
+
+.icons{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    align-items: center;
+    background-color:transparent;
+    height: 100%;
+    width: 60px;
+    float: right;
+    border-radius: 20px;
+    cursor: pointer;   
+}
+
+
+.icons:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow .2s;
+  }
+  
+  .icons:active {
+    background-color: transparent;
+    border-color: #000000;
+    transform: scale(.96);
+  }
+  
+  .icons:disabled {
+    border-color: #DDDDDD;
+    color: #DDDDDD;
+    cursor: not-allowed;
+    opacity: 1;
+  }
+
+
+.btndrp button{
+float: right;
+background-color: #FFFFFF;
+color: #000000;
+}
+
+.navigation{
+    height: 35px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+
+.searchBar{
+width: 250px;
+height: 20px;
+border-radius: 20px;
+background-color: #FFFFFF;
+border: 1px solid #222222;
+border-radius: 8px;
+box-sizing: border-box;
+color: #222222;
+cursor:auto;
+font-family: 'Cinzel', serif;font-family: 'Montserrat', sans-serif;                          
+font-size: 16px;
+font-weight: 600;
+line-height: 20px;
+margin: 0;
+outline: none;
+padding: 13px 23px;
+text-align: center;
+text-decoration: none;
+touch-action: manipulation;
+transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+user-select: none;
+-webkit-user-select: none;
+margin-bottom: 20px;
+float: right;
+}
+
+
+.title{
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 35px;
+}
+
+
+.app{
+    background-color: red;
+}
+
+.sorting-buttons{
+    background-color: red;
+    margin-left: 77px;
+    width: 500px;
+    border-radius: 20px;
+    align-items: center;
+    text-align: center;
+    color: #222222;
+    background-color: #FFFFFF;
+}
+
+
+.wlc{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: 180px;
+}
+
+.welcome{
+            background-color: #FFFFFF;
+            border: 1px solid #222222;
+            border-radius: 8px;
+            box-sizing: border-box;
+            color: #222222;
+            cursor: pointer;
+            display: inline-block;
+            font-family: 'Cinzel', serif;font-family: 'Montserrat', sans-serif;                          
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 20px;
+            margin: 0;
+            outline: none;
+            padding: 13px 23px;
+            width: 500px;
+            text-align: center;
+            text-decoration: none;
+            touch-action: manipulation;
+            transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+            user-select: none;
+            -webkit-user-select: none;
+        
+    
+}
+
+
+.welcome:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow .2s;
+  }
+  
+  .welcome:active {
+    background-color: #F7F7F7;
+    border-color: #000000;
+    transform: scale(.96);
+  }
+  
+  .welcome:disabled {
+    border-color: #DDDDDD;
+    color: #DDDDDD;
+    cursor: not-allowed;
+    opacity: 1;
+  }
+
+.activitiesBox{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto;
+}
+
+  .box{
+    width: 250px;
+    height: 260px;
+    border-radius: 20px;
+    background-color: #FFFFFF;
+    border: 1px solid #222222;
+    border-radius: 8px;
+    box-sizing: border-box;
+    color: #222222;
+    cursor: pointer;
+    display: inline-block;
+    font-family: 'Cinzel', serif;font-family: 'Montserrat', sans-serif;                          
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 20px;
+    margin: 0;
+    outline: none;
+    padding: 13px 23px;
+    text-align: center;
+    text-decoration: none;
+    touch-action: manipulation;
+    transition: box-shadow .2s,-ms-transform .1s,-webkit-transform .1s,transform .1s;
+    user-select: none;
+    -webkit-user-select: none;
+    margin-bottom: 20px;
+    margin-left: 20px;
+  }
+
+  .box:focus-visible {
+    box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
+    transition: box-shadow .2s;
+  }
+  
+  button{
+    cursor: pointer;
+  }
+  
+  .box:disabled {
+    border-color: #DDDDDD;
+    color: #DDDDDD;
+    cursor: not-allowed;
+    opacity: 1;
+  }
+
+
+  .shoppingContainer{
+    height: 100%;
+    width: auto;
+    display:block;
+  }
+
+  #app{
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .cart{
+    float:left;
+    height: 100vh;
+    width: 400px;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    padding: 20px;
+    flex-direction: column;
+    position: absolute;
+  }
+
+.cart h2{
+    color: #FFFFFF;
+    text-transform: uppercase;
+}
+
+.cart ul{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    background-color: rgba(34, 31, 31, 0.787);
+    overflow-y: auto;
+}
+
+.cart li{
+list-style: none;
+width: 100%;
+color: #F7F7F7;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+}
+
+.cart div{
+    display: flex;
+    flex-direction: column;
+}
+
+.cart div img{
+    width: 100px;
+    height: 100%;
+    float: left;
+}
+
+.checkClose{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items:flex-end;
+    
+    
+}
+
+.checkClose button{
+    width: 50%;
+    height: 30px;
+}
+
+
+
