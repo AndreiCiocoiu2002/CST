@@ -2,7 +2,15 @@ export function fetchAllLessons() {
     return fetch('https://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/')
         .then(response => {
             if (!response.ok) {
-                return response.text().then(text => { throw new Error(`HTTP error! Status: ${response.status}, Body: ${text}`) });
+                // If the response is not OK, try to read it as text to get more information
+                return response.text().then(text => {
+                    throw new Error(`HTTP error! Status: ${response.status}, Body: ${text}`);
+                });
+            }
+            // Check the Content-Type to ensure the response is actually JSON
+            const contentType = response.headers.get('content-type');
+            if (!contentType || !contentType.includes('application/json')) {
+                throw new TypeError("Received a non-JSON response from the server");
             }
             return response.json();
         });
