@@ -1,6 +1,6 @@
 // api.js
 export function fetchAllLessons() {
-    return fetch('http://localhost:3000/lessons')
+    return fetch('http://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/')
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -10,7 +10,7 @@ export function fetchAllLessons() {
 }
 
 export function createOrder(orderData) {
-    return fetch('http://localhost:3000/orders', {
+    return fetch('http://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -27,7 +27,7 @@ export function createOrder(orderData) {
 
 // api.js
 export function updateLessonSpace(lessonId, stockToDecrement) {
-    return fetch(`http://localhost:3000/lessons/${lessonId}`, {
+    return fetch(`http://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/lessons${lessonId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
