@@ -1,5 +1,5 @@
 export function fetchAllLessons() {
-    return fetch('http://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/')
+    return fetch('https://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/')
         .then(response => {
             if (!response.ok) {
                 // If the response is not OK, try to read it as text to get more informationS
@@ -17,7 +17,7 @@ export function fetchAllLessons() {
 }
 
 export function createOrder(orderData) {
-    return fetch('http://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/', {
+    return fetch('https://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -33,7 +33,7 @@ export function createOrder(orderData) {
 }
 
 export function updateLessonSpace(lessonId, stockToDecrement) {
-    return fetch(`http://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/lessons/${lessonId}`, {
+    return fetch(`https://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/lessons/${lessonId}`, {
         method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
