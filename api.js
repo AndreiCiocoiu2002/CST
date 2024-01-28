@@ -1,9 +1,8 @@
-// api.js
 export function fetchAllLessons() {
     return fetch('https://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/')
         .then(response => {
             if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
+                return response.text().then(text => { throw new Error(`HTTP error! Status: ${response.status}, Body: ${text}`) });
             }
             return response.json();
         });
