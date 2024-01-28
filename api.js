@@ -1,23 +1,18 @@
 export function fetchAllLessons() {
-    return fetch('https://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/')
+    return fetch('https://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/lessons')
         .then(response => {
             if (!response.ok) {
-                // If the response is not OK, try to read it as text to get more informationS
-                return response.text().then(text => {
-                    throw new Error(`HTTP error! Status: ${response.status}, Body: ${text}`);
-                });
-            }
-            // Check the Content-Type to ensure the response is actually JSON
-            const contentType = response.headers.get('content-type');
-            if (!contentType || !contentType.includes('application/json')) {
-                throw new TypeError("Received a non-JSON response from the server");
+                throw new Error('Network response was not ok: ' + response.statusText);
             }
             return response.json();
+        })
+        .catch(error => {
+            console.error('There has been a problem with your fetch operation:', error);
+            // Handle the error, e.g., showing an error message to the user
         });
 }
-
 export function createOrder(orderData) {
-    return fetch('https://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/', {
+    return fetch('https://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/orders', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -26,12 +21,14 @@ export function createOrder(orderData) {
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error(`HTTP error! Status: ${response.status}`);
+            throw new Error('Network response was not ok: ' + response.statusText);
         }
         return response.json();
+    })
+    .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
     });
 }
-
 export function updateLessonSpace(lessonId, stockToDecrement) {
     return fetch(`https://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/lessons/${lessonId}`, {
         method: 'PUT',
@@ -39,5 +36,14 @@ export function updateLessonSpace(lessonId, stockToDecrement) {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify({ stockToDecrement }),
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok: ' + response.statusText);
+        }
+        return response.json();
+    })
+    .catch(error => {
+        console.error('There has been a problem with your fetch operation:', error);
     });
 }
