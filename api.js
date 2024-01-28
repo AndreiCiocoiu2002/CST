@@ -2,7 +2,7 @@ export function fetchAllLessons() {
     return fetch('https://webstore2002-env.eba-yan2epkh.eu-north-1.elasticbeanstalk.com/')
         .then(response => {
             if (!response.ok) {
-                // If the response is not OK, try to read it as text to get more information
+                // If the response is not OK, try to read it as text to get more informationS
                 return response.text().then(text => {
                     throw new Error(`HTTP error! Status: ${response.status}, Body: ${text}`);
                 });
